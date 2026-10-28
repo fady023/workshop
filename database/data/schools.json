@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Central High",
+        "location": "A",
+        "min_score": 80
+    },
+    {
+        "name": "West Valley High",
+        "location": "B",
+        "min_score": 75
+    }
+]

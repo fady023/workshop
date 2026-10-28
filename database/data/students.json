@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Alice Johnson",
+        "birthdate": "2005-04-10",
+        "gender": "female",
+        "last_year_score": 85,
+        "location": "A",
+        "school_id": null
+    },
+    {
+        "name": "Bob Smith",
+        "birthdate": "2004-09-15",
+        "gender": "male",
+        "last_year_score": 72,
+        "location": "B",
+        "school_id": null
+    }
+]

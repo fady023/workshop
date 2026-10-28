@@ -1,0 +1,12 @@
+[
+    {
+        "location_from": "A",
+        "location_to": "B",
+        "distance": 5
+    },
+    {
+        "location_from": "B",
+        "location_to": "A",
+        "distance": 5
+    }
+]
