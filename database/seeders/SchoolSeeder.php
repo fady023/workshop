@@ -15,8 +15,8 @@ class SchoolSeeder extends Seeder
      */
     public function run(): void
     {
-          $json= File::get("database/data/school.json");
-        $data= json_decode($json);
+          $json= File::get("database/data/schools.json");
+        $data= json_decode($json,true);
         foreach($data as $sch){
             School::create($sch);
         }

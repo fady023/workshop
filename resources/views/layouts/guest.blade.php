@@ -5,26 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Campus · Student Portal</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
+        <link href="https://fonts.bunny.net/css?family=dm-sans:400,500,600,700&family=manrope:400,500,600,700,800&display=swap" rel="stylesheet">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <body class="font-sans antialiased">
+        <main class="auth-page">
+            <a class="brand auth-brand" href="{{ route('login') }}">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M3 9.5 12 5l9 4.5-9 4.5-9-4.5Zm3.5 2v5c3.5 2.5 7.5 2.5 11 0v-5M21 10v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="brand-name">Campus<small>STUDENT PORTAL</small></span>
+            </a>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+            <section class="auth-card">
+                <div class="auth-card-heading">
+                    <span class="auth-emblem" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 14.6 9l6 .9-4.3 4.2 1 5.9-5.3-2.8-5.3 2.8 1-5.9-4.3-4.2 6-.9L12 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <p class="eyebrow">{{ request()->routeIs('register') ? 'GET STARTED' : 'WELCOME BACK' }}</p>
+                    <h1>{{ request()->routeIs('register') ? __('Create your account') : __('Sign in to your account') }}</h1>
+                    <p>{{ request()->routeIs('register') ? __('Join your student community and keep everything in one place.') : __('Pick up where you left off in your student workspace.') }}</p>
+                </div>
                 {{ $slot }}
-            </div>
-        </div>
+            </section>
+
+            <p class="auth-footer">A brighter future starts with the right support.</p>
+        </main>
     </body>
 </html>

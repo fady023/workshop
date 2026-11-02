@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Student;
+use App\Models\Location;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
@@ -14,10 +14,10 @@ class LocationSeeder extends Seeder
      */
     public function run(): void
     {
-          $json= File::get("database/data/location.json");
-        $data= json_decode($json);
+          $json= File::get("database/data/locations.json");
+        $data= json_decode($json,true);
         foreach($data as $loc){
-            Student::create($loc);
+              Location::create($loc);
         }
     }
 }
